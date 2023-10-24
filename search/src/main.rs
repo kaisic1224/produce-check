@@ -30,6 +30,7 @@ fn main() -> Result<(), Box<dyn Error>> {
     } 
     if !found {
         writer.write_record([&args[1], &args[2], &"0".to_string(), &SystemTime::now().duration_since(UNIX_EPOCH)?.as_secs().to_string()])?;
+        println!("{}", args[2]);
     }
 
 
